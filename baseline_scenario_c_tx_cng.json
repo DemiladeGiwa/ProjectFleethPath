@@ -1,0 +1,862 @@
+{
+  "advanced": {
+    "payback_vector": [
+      {
+        "cumulative_cost_by_year": [
+          3500000.0,
+          3825000.0,
+          4150000.0,
+          4475000.0,
+          4800000.0,
+          5125000.0,
+          5450000.0,
+          5775000.0,
+          6100000.0,
+          6425000.0,
+          6750000.0
+        ],
+        "currency": "USD",
+        "fuel_type": "diesel"
+      },
+      {
+        "cumulative_cost_by_year": [
+          11531000.0,
+          11697171.5,
+          11863343.0,
+          12029514.5,
+          12195686.0,
+          12361857.5,
+          12528029.0,
+          12694200.5,
+          12860372.0,
+          13026543.5,
+          13192715.0
+        ],
+        "currency": "USD",
+        "fuel_type": "bev"
+      },
+      {
+        "cumulative_cost_by_year": [
+          26875000.0,
+          27431875.0,
+          27988750.0,
+          28545625.0,
+          29102500.0,
+          29659375.0,
+          30216250.0,
+          30773125.0,
+          31330000.0,
+          31886875.0,
+          32443750.0
+        ],
+        "currency": "USD",
+        "fuel_type": "hydrogen"
+      },
+      {
+        "cumulative_cost_by_year": [
+          4600000.0,
+          4903750.0,
+          5207500.0,
+          5511250.0,
+          5815000.0,
+          6118750.0,
+          6422500.0,
+          6726250.0,
+          7030000.0,
+          7333750.0,
+          7637500.0
+        ],
+        "currency": "USD",
+        "fuel_type": "cng"
+      },
+      {
+        "cumulative_cost_by_year": [
+          3500000.0,
+          3829078.39,
+          4158156.78,
+          4487235.17,
+          4816313.56,
+          5145391.95,
+          5474470.34,
+          5803548.73,
+          6132627.12,
+          6461705.51,
+          6790783.9
+        ],
+        "currency": "USD",
+        "fuel_type": "biodiesel"
+      }
+    ],
+    "payback_vector_years_axis": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "tco_composition": [
+      {
+        "assumptions": [
+          {
+            "is_override": false,
+            "label": "Diesel Bus Purchase Price",
+            "param_id": "REF_CAPEX_VEH_DIESEL_BUS",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/vehicle",
+            "value": 140000.0
+          },
+          {
+            "is_override": false,
+            "label": "Diesel Reference Price",
+            "param_id": "REF_PRICE_DIESEL_GAL",
+            "source_agency": "U.S. EIA On-Highway Diesel Fuel Update",
+            "unit": "USD/gal",
+            "value": 3.85
+          },
+          {
+            "is_override": false,
+            "label": "Diesel Maintenance Cost per Mile",
+            "param_id": "REF_MAINT_CPM_DIESEL",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/mile",
+            "value": 0.225
+          },
+          {
+            "is_override": false,
+            "label": "Diesel Fuel Economy",
+            "param_id": "REF_FE_DIESEL_BUS_MPG",
+            "source_agency": "Argonne ANL AFLEET 2023 / GREET",
+            "unit": "MPG",
+            "value": 6.0
+          },
+          {
+            "is_override": false,
+            "label": "Diesel Well-to-Wheel Carbon Intensity",
+            "param_id": "REF_CI_DIESEL_GHG",
+            "source_agency": "Argonne ANL GREET 2023 (via AFLEET)",
+            "unit": "lb CO2e/gallon (WTW)",
+            "value": 22.4
+          }
+        ],
+        "capex_infra_amortized": 0.0,
+        "capex_vehicle_amortized": 350000.0,
+        "cold_climate_adjustment_applied": false,
+        "currency": "USD",
+        "fuel_type": "diesel",
+        "incentives_applied": 0.0,
+        "lifecycle_co2e_tons": 635.03,
+        "opex_fuel": 240625.0,
+        "opex_maintenance": 84375.0,
+        "tco_total": 675000.0
+      },
+      {
+        "assumptions": [
+          {
+            "is_override": false,
+            "label": "BEV Charger Hardware Cost",
+            "param_id": "REF_INFRA_BEV_DCFC_50_HW",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/charger",
+            "value": 27900.0
+          },
+          {
+            "is_override": false,
+            "label": "BEV Charger Make-Ready (Site) Cost",
+            "param_id": "REF_INFRA_BEV_DCFC_50_MR",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/charger",
+            "value": 62700.0
+          },
+          {
+            "is_override": false,
+            "label": "BEV Charger Annual Communications Cost",
+            "param_id": "REF_INFRA_BEV_COMMS",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/charger/year",
+            "value": 255.0
+          },
+          {
+            "is_override": false,
+            "label": "BEV Charger Annual Maintenance Rate",
+            "param_id": "REF_INFRA_BEV_MAINT_PCT",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "% of hardware cost/year",
+            "value": 0.005
+          },
+          {
+            "is_override": false,
+            "label": "BEV Charger Warranty Cost Rate",
+            "param_id": "REF_INFRA_BEV_WARRANT_PCT",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "% of hardware cost (one-time, lifetime)",
+            "value": 0.07
+          },
+          {
+            "is_override": false,
+            "label": "BEV Energy Consumption",
+            "param_id": "REF_FE_BEV_BUS_KWH",
+            "source_agency": "Argonne ANL AFLEET 2023 / GREET",
+            "unit": "kWh/mile",
+            "value": 2.0
+          },
+          {
+            "is_override": false,
+            "label": "Battery-Electric Bus Purchase Price",
+            "param_id": "REF_CAPEX_VEH_BEV_BUS",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/vehicle",
+            "value": 425000.0
+          },
+          {
+            "is_override": false,
+            "label": "Electricity Reference Rate",
+            "param_id": "REF_PRICE_ELEC_KWH",
+            "source_agency": "U.S. EIA Electricity Monthly (Commercial Sector)",
+            "unit": "USD/kWh",
+            "value": 0.135
+          },
+          {
+            "is_override": false,
+            "label": "BEV Maintenance Cost per Mile",
+            "param_id": "REF_MAINT_CPM_BEV",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/mile",
+            "value": 0.16
+          },
+          {
+            "is_override": false,
+            "label": "Grid Factor Erct",
+            "param_id": "GRID_FACTOR_ERCT",
+            "source_agency": "EPA eGRID with 2023 Data, Revision 2 (released June 12, 2025), Subregion Total Output Emission Rates",
+            "unit": "lb CO2e/MWh",
+            "value": 736.6
+          },
+          {
+            "is_override": false,
+            "label": "Infrastructure Amortization Lifespan",
+            "param_id": "INFRA_LIFESPAN_YEARS",
+            "source_agency": "FleetPath Engineering Constant",
+            "unit": "years",
+            "value": 20.0
+          },
+          {
+            "is_override": false,
+            "label": "BEV Charger-to-Bus Ratio",
+            "param_id": "REF_INFRA_BEV_RATIO",
+            "source_agency": "FleetPath Engineering Constant",
+            "unit": "buses per charger",
+            "value": 2.5
+          }
+        ],
+        "capex_infra_amortized": 45300.0,
+        "capex_vehicle_amortized": 1062500.0,
+        "cold_climate_adjustment_applied": false,
+        "currency": "USD",
+        "fuel_type": "bev",
+        "incentives_applied": 0.0,
+        "lifecycle_co2e_tons": 250.587,
+        "opex_fuel": 101250.0,
+        "opex_maintenance": 64921.5,
+        "tco_total": 1273971.5
+      },
+      {
+        "assumptions": [
+          {
+            "is_override": false,
+            "label": "Hydrogen Fuel Consumption",
+            "param_id": "REF_FE_H2FC_BUS_KG",
+            "source_agency": "NREL ATB 2024 / Argonne GREET",
+            "unit": "kg H2/mile",
+            "value": 0.09
+          },
+          {
+            "is_override": false,
+            "label": "Hydrogen Fuel Cell Bus Purchase Price",
+            "param_id": "REF_CAPEX_VEH_H2FC_BUS",
+            "source_agency": "Argonne ANL AFLEET 2023 / NREL ATB 2024",
+            "unit": "USD/vehicle",
+            "value": 975000.0
+          },
+          {
+            "is_override": false,
+            "label": "Hydrogen Price \u2014 Small Station Tier",
+            "param_id": "REF_PRICE_H2_KG_SMALL",
+            "source_agency": "NREL H2A Delivered Liquid Station Model",
+            "unit": "USD/kg H2",
+            "value": 14.5
+          },
+          {
+            "is_override": false,
+            "label": "Hydrogen Bus Maintenance Cost per Mile",
+            "param_id": "REF_MAINT_CPM_H2FC",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/mile",
+            "value": 0.18
+          },
+          {
+            "is_override": false,
+            "label": "Grid Factor Erct",
+            "param_id": "GRID_FACTOR_ERCT",
+            "source_agency": "EPA eGRID with 2023 Data, Revision 2 (released June 12, 2025), Subregion Total Output Emission Rates",
+            "unit": "lb CO2e/MWh",
+            "value": 736.6
+          },
+          {
+            "is_override": false,
+            "label": "Infrastructure Amortization Lifespan",
+            "param_id": "INFRA_LIFESPAN_YEARS",
+            "source_agency": "FleetPath Engineering Constant",
+            "unit": "years",
+            "value": 20.0
+          },
+          {
+            "is_override": false,
+            "label": "Hydrogen Station Tier Threshold",
+            "param_id": "H2_TIER_THRESHOLD_KG_DAY",
+            "source_agency": "FleetPath Engineering Constant",
+            "unit": "kg H2/day",
+            "value": 300.0
+          },
+          {
+            "is_override": false,
+            "label": "Hydrogen Small-Tier Station CapEx",
+            "param_id": "H2_CAPEX_SMALL_LIQUID",
+            "source_agency": "FleetPath Engineering Constant",
+            "unit": "",
+            "value": 2500000.0
+          }
+        ],
+        "capex_infra_amortized": 125000.0,
+        "capex_vehicle_amortized": 2437500.0,
+        "cold_climate_adjustment_applied": false,
+        "currency": "USD",
+        "fuel_type": "hydrogen",
+        "incentives_applied": 0.0,
+        "lifecycle_co2e_tons": 563.822,
+        "opex_fuel": 489375.0,
+        "opex_maintenance": 67500.0,
+        "tco_total": 3119375.0
+      },
+      {
+        "assumptions": [
+          {
+            "is_override": false,
+            "label": "CNG Fast-Fill Station CapEx",
+            "param_id": "REF_INFRA_CNG_STATION_FAST",
+            "source_agency": "Argonne ANL AFLEET 2023 / Clean Cities",
+            "unit": "USD/station",
+            "value": 600000.0
+          },
+          {
+            "is_override": false,
+            "label": "CNG Fuel Economy",
+            "param_id": "REF_FE_CNG_BUS_DGE",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "DGE/mile (MPGde)",
+            "value": 5.5
+          },
+          {
+            "is_override": false,
+            "label": "CNG Bus Purchase Price",
+            "param_id": "REF_CAPEX_VEH_CNG_BUS",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/vehicle",
+            "value": 160000.0
+          },
+          {
+            "is_override": false,
+            "label": "CNG Reference Price",
+            "param_id": "REF_PRICE_CNG_DGE",
+            "source_agency": "DOE Clean Cities Alternative Fuel Price Report",
+            "unit": "USD/DGE",
+            "value": 3.3
+          },
+          {
+            "is_override": false,
+            "label": "CNG Maintenance Cost per Mile",
+            "param_id": "REF_MAINT_CPM_CNG",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/mile",
+            "value": 0.21
+          },
+          {
+            "is_override": false,
+            "label": "CNG Well-to-Wheel Carbon Intensity",
+            "param_id": "REF_CI_CNG_GHG",
+            "source_agency": "Argonne ANL GREET 2023",
+            "unit": "lb CO2e/DGE (WTW)",
+            "value": 13.7
+          },
+          {
+            "is_override": false,
+            "label": "Infrastructure Amortization Lifespan",
+            "param_id": "INFRA_LIFESPAN_YEARS",
+            "source_agency": "FleetPath Engineering Constant",
+            "unit": "years",
+            "value": 20.0
+          },
+          {
+            "is_override": false,
+            "label": "CNG Fast-Fill Fleet-Size Threshold",
+            "param_id": "CNG_FLEET_THRESHOLD_FAST_FILL",
+            "source_agency": "FleetPath Engineering Constant",
+            "unit": "vehicles",
+            "value": 5.0
+          }
+        ],
+        "capex_infra_amortized": 30000.0,
+        "capex_vehicle_amortized": 400000.0,
+        "cold_climate_adjustment_applied": false,
+        "currency": "USD",
+        "fuel_type": "cng",
+        "incentives_applied": 0.0,
+        "lifecycle_co2e_tons": 423.697,
+        "opex_fuel": 225000.0,
+        "opex_maintenance": 78750.0,
+        "tco_total": 733750.0
+      },
+      {
+        "assumptions": [
+          {
+            "is_override": false,
+            "label": "Biodiesel (B20) Bus Purchase Price",
+            "param_id": "REF_CAPEX_VEH_B20_BUS",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/vehicle",
+            "value": 140000.0
+          },
+          {
+            "is_override": false,
+            "label": "Diesel Reference Price",
+            "param_id": "REF_PRICE_DIESEL_GAL",
+            "source_agency": "U.S. EIA On-Highway Diesel Fuel Update",
+            "unit": "USD/gal",
+            "value": 3.85
+          },
+          {
+            "is_override": false,
+            "label": "Biodiesel (B20) Maintenance Cost per Mile",
+            "param_id": "REF_MAINT_CPM_B20",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/mile",
+            "value": 0.225
+          },
+          {
+            "is_override": false,
+            "label": "Biodiesel (B20) Fuel Economy",
+            "param_id": "REF_FE_B20_BUS_MPG",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "MPG",
+            "value": 5.9
+          },
+          {
+            "is_override": false,
+            "label": "Biodiesel (B20) Well-to-Wheel Carbon Intensity",
+            "param_id": "REF_CI_B20_GHG",
+            "source_agency": "Argonne ANL GREET 2023",
+            "unit": "lb CO2e/gallon (WTW)",
+            "value": 18.0
+          }
+        ],
+        "capex_infra_amortized": 0.0,
+        "capex_vehicle_amortized": 350000.0,
+        "cold_climate_adjustment_applied": false,
+        "currency": "USD",
+        "fuel_type": "biodiesel",
+        "incentives_applied": 0.0,
+        "lifecycle_co2e_tons": 518.941,
+        "opex_fuel": 244703.39,
+        "opex_maintenance": 84375.0,
+        "tco_total": 679078.39
+      }
+    ]
+  },
+  "pathways": [
+    {
+      "assumptions": [
+        {
+          "is_override": false,
+          "label": "Diesel Bus Purchase Price",
+          "param_id": "REF_CAPEX_VEH_DIESEL_BUS",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/vehicle",
+          "value": 140000.0
+        },
+        {
+          "is_override": false,
+          "label": "Diesel Reference Price",
+          "param_id": "REF_PRICE_DIESEL_GAL",
+          "source_agency": "U.S. EIA On-Highway Diesel Fuel Update",
+          "unit": "USD/gal",
+          "value": 3.85
+        },
+        {
+          "is_override": false,
+          "label": "Diesel Maintenance Cost per Mile",
+          "param_id": "REF_MAINT_CPM_DIESEL",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/mile",
+          "value": 0.225
+        },
+        {
+          "is_override": false,
+          "label": "Diesel Fuel Economy",
+          "param_id": "REF_FE_DIESEL_BUS_MPG",
+          "source_agency": "Argonne ANL AFLEET 2023 / GREET",
+          "unit": "MPG",
+          "value": 6.0
+        },
+        {
+          "is_override": false,
+          "label": "Diesel Well-to-Wheel Carbon Intensity",
+          "param_id": "REF_CI_DIESEL_GHG",
+          "source_agency": "Argonne ANL GREET 2023 (via AFLEET)",
+          "unit": "lb CO2e/gallon (WTW)",
+          "value": 22.4
+        }
+      ],
+      "capex_infra_amortized": 0.0,
+      "capex_vehicle_amortized": 350000.0,
+      "cold_climate_adjustment_applied": false,
+      "currency": "USD",
+      "fuel_type": "diesel",
+      "incentives_applied": 0.0,
+      "lifecycle_co2e_tons": 635.03,
+      "opex_fuel": 240625.0,
+      "opex_maintenance": 84375.0,
+      "tco_total": 675000.0
+    },
+    {
+      "assumptions": [
+        {
+          "is_override": false,
+          "label": "BEV Charger Hardware Cost",
+          "param_id": "REF_INFRA_BEV_DCFC_50_HW",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/charger",
+          "value": 27900.0
+        },
+        {
+          "is_override": false,
+          "label": "BEV Charger Make-Ready (Site) Cost",
+          "param_id": "REF_INFRA_BEV_DCFC_50_MR",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/charger",
+          "value": 62700.0
+        },
+        {
+          "is_override": false,
+          "label": "BEV Charger Annual Communications Cost",
+          "param_id": "REF_INFRA_BEV_COMMS",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/charger/year",
+          "value": 255.0
+        },
+        {
+          "is_override": false,
+          "label": "BEV Charger Annual Maintenance Rate",
+          "param_id": "REF_INFRA_BEV_MAINT_PCT",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "% of hardware cost/year",
+          "value": 0.005
+        },
+        {
+          "is_override": false,
+          "label": "BEV Charger Warranty Cost Rate",
+          "param_id": "REF_INFRA_BEV_WARRANT_PCT",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "% of hardware cost (one-time, lifetime)",
+          "value": 0.07
+        },
+        {
+          "is_override": false,
+          "label": "BEV Energy Consumption",
+          "param_id": "REF_FE_BEV_BUS_KWH",
+          "source_agency": "Argonne ANL AFLEET 2023 / GREET",
+          "unit": "kWh/mile",
+          "value": 2.0
+        },
+        {
+          "is_override": false,
+          "label": "Battery-Electric Bus Purchase Price",
+          "param_id": "REF_CAPEX_VEH_BEV_BUS",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/vehicle",
+          "value": 425000.0
+        },
+        {
+          "is_override": false,
+          "label": "Electricity Reference Rate",
+          "param_id": "REF_PRICE_ELEC_KWH",
+          "source_agency": "U.S. EIA Electricity Monthly (Commercial Sector)",
+          "unit": "USD/kWh",
+          "value": 0.135
+        },
+        {
+          "is_override": false,
+          "label": "BEV Maintenance Cost per Mile",
+          "param_id": "REF_MAINT_CPM_BEV",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/mile",
+          "value": 0.16
+        },
+        {
+          "is_override": false,
+          "label": "Grid Factor Erct",
+          "param_id": "GRID_FACTOR_ERCT",
+          "source_agency": "EPA eGRID with 2023 Data, Revision 2 (released June 12, 2025), Subregion Total Output Emission Rates",
+          "unit": "lb CO2e/MWh",
+          "value": 736.6
+        },
+        {
+          "is_override": false,
+          "label": "Infrastructure Amortization Lifespan",
+          "param_id": "INFRA_LIFESPAN_YEARS",
+          "source_agency": "FleetPath Engineering Constant",
+          "unit": "years",
+          "value": 20.0
+        },
+        {
+          "is_override": false,
+          "label": "BEV Charger-to-Bus Ratio",
+          "param_id": "REF_INFRA_BEV_RATIO",
+          "source_agency": "FleetPath Engineering Constant",
+          "unit": "buses per charger",
+          "value": 2.5
+        }
+      ],
+      "capex_infra_amortized": 45300.0,
+      "capex_vehicle_amortized": 1062500.0,
+      "cold_climate_adjustment_applied": false,
+      "currency": "USD",
+      "fuel_type": "bev",
+      "incentives_applied": 0.0,
+      "lifecycle_co2e_tons": 250.587,
+      "opex_fuel": 101250.0,
+      "opex_maintenance": 64921.5,
+      "tco_total": 1273971.5
+    },
+    {
+      "assumptions": [
+        {
+          "is_override": false,
+          "label": "Hydrogen Fuel Consumption",
+          "param_id": "REF_FE_H2FC_BUS_KG",
+          "source_agency": "NREL ATB 2024 / Argonne GREET",
+          "unit": "kg H2/mile",
+          "value": 0.09
+        },
+        {
+          "is_override": false,
+          "label": "Hydrogen Fuel Cell Bus Purchase Price",
+          "param_id": "REF_CAPEX_VEH_H2FC_BUS",
+          "source_agency": "Argonne ANL AFLEET 2023 / NREL ATB 2024",
+          "unit": "USD/vehicle",
+          "value": 975000.0
+        },
+        {
+          "is_override": false,
+          "label": "Hydrogen Price \u2014 Small Station Tier",
+          "param_id": "REF_PRICE_H2_KG_SMALL",
+          "source_agency": "NREL H2A Delivered Liquid Station Model",
+          "unit": "USD/kg H2",
+          "value": 14.5
+        },
+        {
+          "is_override": false,
+          "label": "Hydrogen Bus Maintenance Cost per Mile",
+          "param_id": "REF_MAINT_CPM_H2FC",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/mile",
+          "value": 0.18
+        },
+        {
+          "is_override": false,
+          "label": "Grid Factor Erct",
+          "param_id": "GRID_FACTOR_ERCT",
+          "source_agency": "EPA eGRID with 2023 Data, Revision 2 (released June 12, 2025), Subregion Total Output Emission Rates",
+          "unit": "lb CO2e/MWh",
+          "value": 736.6
+        },
+        {
+          "is_override": false,
+          "label": "Infrastructure Amortization Lifespan",
+          "param_id": "INFRA_LIFESPAN_YEARS",
+          "source_agency": "FleetPath Engineering Constant",
+          "unit": "years",
+          "value": 20.0
+        },
+        {
+          "is_override": false,
+          "label": "Hydrogen Station Tier Threshold",
+          "param_id": "H2_TIER_THRESHOLD_KG_DAY",
+          "source_agency": "FleetPath Engineering Constant",
+          "unit": "kg H2/day",
+          "value": 300.0
+        },
+        {
+          "is_override": false,
+          "label": "Hydrogen Small-Tier Station CapEx",
+          "param_id": "H2_CAPEX_SMALL_LIQUID",
+          "source_agency": "FleetPath Engineering Constant",
+          "unit": "",
+          "value": 2500000.0
+        }
+      ],
+      "capex_infra_amortized": 125000.0,
+      "capex_vehicle_amortized": 2437500.0,
+      "cold_climate_adjustment_applied": false,
+      "currency": "USD",
+      "fuel_type": "hydrogen",
+      "incentives_applied": 0.0,
+      "lifecycle_co2e_tons": 563.822,
+      "opex_fuel": 489375.0,
+      "opex_maintenance": 67500.0,
+      "tco_total": 3119375.0
+    },
+    {
+      "assumptions": [
+        {
+          "is_override": false,
+          "label": "CNG Fast-Fill Station CapEx",
+          "param_id": "REF_INFRA_CNG_STATION_FAST",
+          "source_agency": "Argonne ANL AFLEET 2023 / Clean Cities",
+          "unit": "USD/station",
+          "value": 600000.0
+        },
+        {
+          "is_override": false,
+          "label": "CNG Fuel Economy",
+          "param_id": "REF_FE_CNG_BUS_DGE",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "DGE/mile (MPGde)",
+          "value": 5.5
+        },
+        {
+          "is_override": false,
+          "label": "CNG Bus Purchase Price",
+          "param_id": "REF_CAPEX_VEH_CNG_BUS",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/vehicle",
+          "value": 160000.0
+        },
+        {
+          "is_override": false,
+          "label": "CNG Reference Price",
+          "param_id": "REF_PRICE_CNG_DGE",
+          "source_agency": "DOE Clean Cities Alternative Fuel Price Report",
+          "unit": "USD/DGE",
+          "value": 3.3
+        },
+        {
+          "is_override": false,
+          "label": "CNG Maintenance Cost per Mile",
+          "param_id": "REF_MAINT_CPM_CNG",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/mile",
+          "value": 0.21
+        },
+        {
+          "is_override": false,
+          "label": "CNG Well-to-Wheel Carbon Intensity",
+          "param_id": "REF_CI_CNG_GHG",
+          "source_agency": "Argonne ANL GREET 2023",
+          "unit": "lb CO2e/DGE (WTW)",
+          "value": 13.7
+        },
+        {
+          "is_override": false,
+          "label": "Infrastructure Amortization Lifespan",
+          "param_id": "INFRA_LIFESPAN_YEARS",
+          "source_agency": "FleetPath Engineering Constant",
+          "unit": "years",
+          "value": 20.0
+        },
+        {
+          "is_override": false,
+          "label": "CNG Fast-Fill Fleet-Size Threshold",
+          "param_id": "CNG_FLEET_THRESHOLD_FAST_FILL",
+          "source_agency": "FleetPath Engineering Constant",
+          "unit": "vehicles",
+          "value": 5.0
+        }
+      ],
+      "capex_infra_amortized": 30000.0,
+      "capex_vehicle_amortized": 400000.0,
+      "cold_climate_adjustment_applied": false,
+      "currency": "USD",
+      "fuel_type": "cng",
+      "incentives_applied": 0.0,
+      "lifecycle_co2e_tons": 423.697,
+      "opex_fuel": 225000.0,
+      "opex_maintenance": 78750.0,
+      "tco_total": 733750.0
+    },
+    {
+      "assumptions": [
+        {
+          "is_override": false,
+          "label": "Biodiesel (B20) Bus Purchase Price",
+          "param_id": "REF_CAPEX_VEH_B20_BUS",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/vehicle",
+          "value": 140000.0
+        },
+        {
+          "is_override": false,
+          "label": "Diesel Reference Price",
+          "param_id": "REF_PRICE_DIESEL_GAL",
+          "source_agency": "U.S. EIA On-Highway Diesel Fuel Update",
+          "unit": "USD/gal",
+          "value": 3.85
+        },
+        {
+          "is_override": false,
+          "label": "Biodiesel (B20) Maintenance Cost per Mile",
+          "param_id": "REF_MAINT_CPM_B20",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/mile",
+          "value": 0.225
+        },
+        {
+          "is_override": false,
+          "label": "Biodiesel (B20) Fuel Economy",
+          "param_id": "REF_FE_B20_BUS_MPG",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "MPG",
+          "value": 5.9
+        },
+        {
+          "is_override": false,
+          "label": "Biodiesel (B20) Well-to-Wheel Carbon Intensity",
+          "param_id": "REF_CI_B20_GHG",
+          "source_agency": "Argonne ANL GREET 2023",
+          "unit": "lb CO2e/gallon (WTW)",
+          "value": 18.0
+        }
+      ],
+      "capex_infra_amortized": 0.0,
+      "capex_vehicle_amortized": 350000.0,
+      "cold_climate_adjustment_applied": false,
+      "currency": "USD",
+      "fuel_type": "biodiesel",
+      "incentives_applied": 0.0,
+      "lifecycle_co2e_tons": 518.941,
+      "opex_fuel": 244703.39,
+      "opex_maintenance": 84375.0,
+      "tco_total": 679078.39
+    }
+  ],
+  "verdict": {
+    "emissions_reduction_pct": 60.5,
+    "payback_years": null,
+    "summary_text": "Battery-Electric wins: no capital payback within fleet lifecycle versus the diesel baseline, cutting lifecycle CO2e emissions by 60.5% relative to diesel. Note: Battery-Electric's lifetime cost is $598,972 USD higher than diesel's over the fleet lifecycle -- this pathway is favored on blended cost/carbon utility, not on lowest raw cost.",
+    "winner_pathway": "bev"
+  }
+}

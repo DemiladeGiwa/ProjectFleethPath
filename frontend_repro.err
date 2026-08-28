@@ -1,0 +1,19 @@
+X [ERROR] Cannot read directory "../../../..": Access is denied.
+
+X [ERROR] Could not resolve "C:\\Users\\Demi\\OneDrive\\Documents\\Project-FleethPath\\fleetpath-frontend\\vite.config.js"
+
+failed to load config from C:\Users\Demi\OneDrive\Documents\Project-FleethPath\fleetpath-frontend\vite.config.js
+error when starting dev server:
+Error: Build failed with 2 errors:
+error: Cannot read directory "../../../..": Access is denied.
+error: Could not resolve "C:\\Users\\Demi\\OneDrive\\Documents\\Project-FleethPath\\fleetpath-frontend\\vite.config.js"
+    at failureErrorWithLog (C:\Users\Demi\OneDrive\Documents\Project-FleethPath\fleetpath-frontend\node_modules\esbuild\lib\main.js:1748:15)
+    at C:\Users\Demi\OneDrive\Documents\Project-FleethPath\fleetpath-frontend\node_modules\esbuild\lib\main.js:1207:25
+    at runOnEndCallbacks (C:\Users\Demi\OneDrive\Documents\Project-FleethPath\fleetpath-frontend\node_modules\esbuild\lib\main.js:1588:45)
+    at buildResponseToResult (C:\Users\Demi\OneDrive\Documents\Project-FleethPath\fleetpath-frontend\node_modules\esbuild\lib\main.js:1205:7)
+    at C:\Users\Demi\OneDrive\Documents\Project-FleethPath\fleetpath-frontend\node_modules\esbuild\lib\main.js:1232:16
+    at responseCallbacks.<computed> (C:\Users\Demi\OneDrive\Documents\Project-FleethPath\fleetpath-frontend\node_modules\esbuild\lib\main.js:884:9)
+    at handleIncomingPacket (C:\Users\Demi\OneDrive\Documents\Project-FleethPath\fleetpath-frontend\node_modules\esbuild\lib\main.js:939:12)
+    at Socket.readFromStdout (C:\Users\Demi\OneDrive\Documents\Project-FleethPath\fleetpath-frontend\node_modules\esbuild\lib\main.js:862:7)
+    at Socket.emit (node:events:509:28)
+    at addChunk (node:internal/streams/readable:563:12)

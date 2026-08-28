@@ -1,0 +1,589 @@
+{
+  "engine_constants": {
+    "infra_lifespan_years": {
+      "value": 20,
+      "unit": "years",
+      "param_id": "INFRA_LIFESPAN_YEARS",
+      "note": "HARDCODED - must never read fleet.lifecycle_years"
+    },
+    "bev_charger_ratio": {
+      "value": 2.5,
+      "unit": "buses per charger",
+      "param_id": "REF_INFRA_BEV_RATIO"
+    },
+    "hydrogen_tier_threshold_kg_day": {
+      "value": 300.0,
+      "unit": "kg H2/day",
+      "param_id": "H2_TIER_THRESHOLD_KG_DAY",
+      "note": "Boundary is strict greater-than; exactly 300 selects small tier"
+    },
+    "hydrogen_capex_small_liquid_usd": {
+      "value": 2500000,
+      "param_id": "H2_CAPEX_SMALL_LIQUID"
+    },
+    "hydrogen_capex_medium_delivery_usd": {
+      "value": 4500000,
+      "param_id": "H2_CAPEX_MEDIUM_DELIVERY"
+    },
+    "cng_fleet_threshold_fast_fill": {
+      "value": 5,
+      "unit": "vehicles",
+      "param_id": "CNG_FLEET_THRESHOLD_FAST_FILL",
+      "note": "<=5 vehicles selects time-fill; >5 selects fast-fill"
+    }
+  },
+  "diesel": {
+    "capex": {
+      "vehicle_bus_usd": {
+        "default": 140000,
+        "range_low": 120000,
+        "range_high": 160000,
+        "unit": "USD/vehicle",
+        "param_id": "REF_CAPEX_VEH_DIESEL_BUS",
+        "source": "Argonne ANL AFLEET 2023"
+      }
+    },
+    "maintenance": {
+      "cost_per_mile_usd": {
+        "default": 0.225,
+        "range_low": 0.2,
+        "range_high": 0.25,
+        "unit": "USD/mile",
+        "param_id": "REF_MAINT_CPM_DIESEL",
+        "source": "Argonne ANL AFLEET 2023"
+      }
+    },
+    "fuel_economy": {
+      "bus_mpg": {
+        "default": 6.0,
+        "range_low": 5.0,
+        "range_high": 7.0,
+        "unit": "MPG",
+        "param_id": "REF_FE_DIESEL_BUS_MPG",
+        "source": "Argonne ANL AFLEET 2023 / GREET"
+      }
+    },
+    "emissions": {
+      "carbon_intensity_wtw": {
+        "default": 22.4,
+        "unit": "lb CO2e/gallon (WTW)",
+        "param_id": "REF_CI_DIESEL_GHG",
+        "source": "Argonne ANL GREET 2023 (via AFLEET)"
+      }
+    },
+    "fuel_price": {
+      "default_price_gal": {
+        "default": 3.85,
+        "unit": "USD/gal",
+        "param_id": "REF_PRICE_DIESEL_GAL",
+        "source": "U.S. EIA On-Highway Diesel Fuel Update"
+      }
+    }
+  },
+  "bev": {
+    "capex": {
+      "vehicle_bus_usd": {
+        "default": 425000,
+        "range_low": 350000,
+        "range_high": 500000,
+        "unit": "USD/vehicle",
+        "param_id": "REF_CAPEX_VEH_BEV_BUS",
+        "source": "Argonne ANL AFLEET 2023"
+      }
+    },
+    "maintenance": {
+      "cost_per_mile_usd": {
+        "default": 0.16,
+        "range_low": 0.14,
+        "range_high": 0.18,
+        "unit": "USD/mile",
+        "param_id": "REF_MAINT_CPM_BEV",
+        "source": "Argonne ANL AFLEET 2023"
+      }
+    },
+    "fuel_economy": {
+      "transit_bus_kwh_per_mile": {
+        "default": 2.0,
+        "range_low": 1.7,
+        "range_high": 2.6,
+        "unit": "kWh/mile",
+        "param_id": "REF_FE_BEV_BUS_KWH",
+        "source": "Argonne ANL AFLEET 2023 / GREET"
+      },
+      "school_bus_kwh_per_mile": {
+        "default": 1.7,
+        "unit": "kWh/mile",
+        "param_id": "REF_FE_BEV_SCHOOLBUS_KWH",
+        "source": "Argonne ANL AFLEET 2023"
+      }
+    },
+    "infrastructure": {
+      "charger_ratio_buses_per_charger": {
+        "default": 2.5,
+        "unit": "buses/charger",
+        "param_id": "REF_INFRA_BEV_RATIO"
+      },
+      "dcfc_50_hardware_usd": {
+        "default": 27900.0,
+        "unit": "USD/charger",
+        "param_id": "REF_INFRA_BEV_DCFC_50_HW",
+        "source": "Argonne ANL AFLEET 2023"
+      },
+      "dcfc_50_make_ready_usd": {
+        "default": 62700.0,
+        "unit": "USD/charger",
+        "param_id": "REF_INFRA_BEV_DCFC_50_MR",
+        "source": "Argonne ANL AFLEET 2023"
+      },
+      "dcfc_150_hardware_usd": {
+        "default": 87800.0,
+        "unit": "USD/charger",
+        "param_id": "REF_INFRA_BEV_DCFC_150_HW",
+        "source": "Argonne ANL AFLEET 2023"
+      },
+      "dcfc_150_make_ready_usd": {
+        "default": 91000.0,
+        "unit": "USD/charger",
+        "param_id": "REF_INFRA_BEV_DCFC_150_MR",
+        "source": "Argonne ANL AFLEET 2023"
+      },
+      "annual_maintenance_pct": {
+        "default": 0.005,
+        "unit": "% of hardware cost/year",
+        "param_id": "REF_INFRA_BEV_MAINT_PCT",
+        "source": "Argonne ANL AFLEET 2023"
+      },
+      "warranty_pct_lifetime": {
+        "default": 0.07,
+        "unit": "% of hardware cost (one-time, lifetime)",
+        "param_id": "REF_INFRA_BEV_WARRANT_PCT",
+        "source": "Argonne ANL AFLEET 2023"
+      },
+      "annual_comms_usd": {
+        "default": 255.0,
+        "unit": "USD/charger/year",
+        "param_id": "REF_INFRA_BEV_COMMS",
+        "source": "Argonne ANL AFLEET 2023"
+      }
+    },
+    "fuel_price": {
+      "default_electricity_rate_usd_kwh": {
+        "default": 0.135,
+        "unit": "USD/kWh",
+        "param_id": "REF_PRICE_ELEC_KWH",
+        "source": "U.S. EIA Electricity Monthly (Commercial Sector)"
+      }
+    },
+    "climate_adjustment": {
+      "cold_climate_efficiency_penalty_pct": {
+        "default": 0.2,
+        "range_low": 0.15,
+        "range_high": 0.3,
+        "unit": "% increase in baseline consumption",
+        "param_id": "REF_CLIMATE_BEV_COLD_PENALTY",
+        "source": "Argonne ANL AFLEET 2023 / NREL Transit Bus Studies",
+        "note": "Applied when climate.cold_climate_flag == true (cabin resistive heating + thermal management draw)"
+      }
+    },
+    "incentives": {
+      "qc_pets_purchase_rebate_cad_per_bus": {
+        "value": 125000,
+        "unit": "CAD/vehicle",
+        "param_id": "REF_INCENTIVE_QC_PETS_BEV_BUS",
+        "region_scope": "QC",
+        "source_agency": "Gouvernement du Quebec, Programme d'electrification du transport scolaire (PETS), Volet 1",
+        "source": "Decret 728-2024 ($3,750,000 CAD / 30 buses = Autobus Campeau inc.) and Decret 736-2024 ($875,000 CAD / 7 buses = Autobus R.O.B.O inc.), Gazette officielle du Quebec, 1 mai 2024 -- both independently resolve to the same $125,000 CAD/bus figure.",
+        "program_end_date": "2028-03-31",
+        "wired_into_calculator": true,
+        "note": "Value is a derived estimate from two real, independently-published decree amounts that both compute to the same per-bus figure -- not an official published flat-rate schedule. PETS may specify amounts by bus type (A/C/D) that this flat estimate does not capture; treat as representative, not exact. Applies only to Quebec (province == 'QC'). No equivalent provincial or federal automatic BEV purchase incentive was found for any other Canadian region after a real search pass -- see canadian_regional_pricing_gaps for what was checked (iMHZEV explicitly excludes school buses/transit; ZETF is competitive/capped, not automatic, and reportedly exhausted since 2025 per industry reporting; no NB-specific program found, corroborated by two independent research passes this session)."
+      }
+    }
+  },
+  "hydrogen": {
+    "capex": {
+      "vehicle_bus_usd": {
+        "default": 975000,
+        "range_low": 750000,
+        "range_high": 1200000,
+        "unit": "USD/vehicle",
+        "param_id": "REF_CAPEX_VEH_H2FC_BUS",
+        "source": "Argonne ANL AFLEET 2023 / NREL ATB 2024"
+      }
+    },
+    "maintenance": {
+      "cost_per_mile_usd": {
+        "default": 0.18,
+        "range_low": 0.16,
+        "range_high": 0.2,
+        "unit": "USD/mile",
+        "param_id": "REF_MAINT_CPM_H2FC",
+        "source": "Argonne ANL AFLEET 2023"
+      }
+    },
+    "fuel_economy": {
+      "bus_kg_per_mile": {
+        "default": 0.09,
+        "range_low": 0.07,
+        "range_high": 0.12,
+        "unit": "kg H2/mile",
+        "param_id": "REF_FE_H2FC_BUS_KG",
+        "source": "NREL ATB 2024 / Argonne GREET"
+      }
+    },
+    "fuel_price": {
+      "current_low_usd_per_kg": {
+        "default": 9.1,
+        "range_low": 6.2,
+        "range_high": 12.0,
+        "unit": "USD/kg H2",
+        "param_id": "REF_PRICE_H2_CURRENT_LOW",
+        "source": "NREL ATB 2024 (H2A-Lite, SMR pathway)",
+        "note": "Reference/sensitivity value; production calc uses tier-specific infrastructure.*.price_per_kg"
+      },
+      "current_high_usd_per_kg": {
+        "default": 13.1,
+        "range_low": 8.2,
+        "range_high": 18.0,
+        "unit": "USD/kg H2",
+        "param_id": "REF_PRICE_H2_CURRENT_HIGH",
+        "source": "NREL ATB 2024 (H2A-Lite / Electrolysis)",
+        "note": "Reference/sensitivity value"
+      },
+      "future_target_usd_per_kg": {
+        "default": 4.0,
+        "unit": "USD/kg H2",
+        "param_id": "REF_PRICE_H2_FUTURE_TARGET",
+        "source": "NREL ATB 2024 / DOE H2 Program",
+        "note": "Future scenario toggle - not used in current-state calculation"
+      }
+    },
+    "infrastructure": {
+      "tier_threshold_kg_per_day": {
+        "default": 300.0,
+        "unit": "kg H2/day",
+        "param_id": "H2_TIER_THRESHOLD_KG_DAY"
+      },
+      "small_liquid_delivery_capex_usd": {
+        "default": 2500000,
+        "range_low": 1500000,
+        "range_high": 3500000,
+        "unit": "USD/station",
+        "param_id": "REF_INFRA_H2_STATION_CAPEX",
+        "source": "NREL H2A / DOE HFTO Multi-Year Plan",
+        "note": "Selected when daily_fleet_demand_kg_h2 <= 300",
+        "max_capacity_kg_day": 300.0,
+        "price_per_kg": {
+          "default": 14.5,
+          "unit": "USD/kg H2",
+          "param_id": "REF_PRICE_H2_KG_SMALL",
+          "source": "NREL H2A Delivered Liquid Station Model"
+        }
+      },
+      "medium_delivery_capex_usd": {
+        "default": 4500000,
+        "unit": "USD/station",
+        "param_id": "H2_CAPEX_MEDIUM_DELIVERY",
+        "source": "NREL H2A / DOE HFTO Multi-Year Plan",
+        "note": "Selected when daily_fleet_demand_kg_h2 > 300",
+        "max_capacity_kg_day": 1000.0,
+        "price_per_kg": {
+          "default": 12.0,
+          "unit": "USD/kg H2",
+          "param_id": "REF_PRICE_H2_KG_MED",
+          "source": "NREL H2A Delivered Liquid Station Model"
+        }
+      },
+      "delivery_dispensing_cost_usd_per_kg": {
+        "default": 5.0,
+        "range_low": 3.0,
+        "range_high": 7.0,
+        "unit": "USD/kg H2 (of total retail price)",
+        "param_id": "REF_INFRA_H2_DISP_COST",
+        "source": "NREL ATB 2024 (Bracci et al.)"
+      },
+      "ca_federal_clean_hydrogen_itc_rate": {
+        "default": 0.4,
+        "unit": "fraction of station capex",
+        "param_id": "REF_INCENTIVE_CA_FEDERAL_H2_ITC",
+        "source": "Canada Budget 2023 / Income Tax Act s.127.48 (Bill C-59)",
+        "source_agency": "Finance Canada / ECCC",
+        "wired_into_calculator": true,
+        "region_scope": "CA",
+        "note": "40% federal Clean Hydrogen ITC applicable to hydrogen station CapEx in Canadian provinces"
+      }
+    },
+    "climate_adjustment": {
+      "cold_start_efficiency_penalty": {
+        "default": 0.05,
+        "unit": "% increase in baseline consumption",
+        "param_id": "REF_CLIMATE_H2_COLD_START",
+        "source": "NREL Fuel Cell Bus Evaluations",
+        "note": "Minor sub-zero efficiency scaling for cold-start stabilization; applied when climate.cold_climate_flag == true"
+      }
+    }
+  },
+  "cng": {
+    "capex": {
+      "vehicle_bus_usd": {
+        "default": 160000,
+        "range_low": 140000,
+        "range_high": 180000,
+        "unit": "USD/vehicle",
+        "param_id": "REF_CAPEX_VEH_CNG_BUS",
+        "source": "Argonne ANL AFLEET 2023"
+      }
+    },
+    "maintenance": {
+      "cost_per_mile_usd": {
+        "default": 0.21,
+        "range_low": 0.19,
+        "range_high": 0.23,
+        "unit": "USD/mile",
+        "param_id": "REF_MAINT_CPM_CNG",
+        "source": "Argonne ANL AFLEET 2023"
+      }
+    },
+    "fuel_economy": {
+      "bus_dge_per_mile": {
+        "default": 5.5,
+        "range_low": 4.5,
+        "range_high": 6.0,
+        "unit": "DGE/mile (MPGde)",
+        "param_id": "REF_FE_CNG_BUS_DGE",
+        "source": "Argonne ANL AFLEET 2023"
+      }
+    },
+    "emissions": {
+      "carbon_intensity_wtw": {
+        "default": 13.7,
+        "unit": "lb CO2e/DGE (WTW)",
+        "param_id": "REF_CI_CNG_GHG",
+        "source": "Argonne ANL GREET 2023"
+      }
+    },
+    "fuel_price": {
+      "default_price_dge": {
+        "default": 3.3,
+        "unit": "USD/DGE",
+        "param_id": "REF_PRICE_CNG_DGE",
+        "source": "DOE Clean Cities Alternative Fuel Price Report"
+      }
+    },
+    "infrastructure": {
+      "fleet_threshold_fast_fill_vehicles": {
+        "default": 5,
+        "unit": "vehicles",
+        "param_id": "CNG_FLEET_THRESHOLD_FAST_FILL"
+      },
+      "time_fill_station_capex_usd": {
+        "default": 175000,
+        "range_low": 100000,
+        "range_high": 250000,
+        "unit": "USD/station",
+        "param_id": "REF_INFRA_CNG_STATION_TIME",
+        "source": "Argonne ANL AFLEET 2023 / Clean Cities",
+        "note": "Preferred default for school fleets - overnight slow-fill; selected when fleet.vehicle_count <= 5"
+      },
+      "fast_fill_station_capex_usd": {
+        "default": 600000,
+        "range_low": 400000,
+        "range_high": 800000,
+        "unit": "USD/station",
+        "param_id": "REF_INFRA_CNG_STATION_FAST",
+        "source": "Argonne ANL AFLEET 2023 / Clean Cities",
+        "note": "Selected when fleet.vehicle_count > 5"
+      }
+    }
+  },
+  "biodiesel": {
+    "capex": {
+      "vehicle_bus_usd": {
+        "default": 140000,
+        "range_low": 120000,
+        "range_high": 160000,
+        "unit": "USD/vehicle",
+        "param_id": "REF_CAPEX_VEH_B20_BUS",
+        "source": "Argonne ANL AFLEET 2023",
+        "note": "Same drivetrain as diesel, no CapEx premium"
+      }
+    },
+    "maintenance": {
+      "cost_per_mile_usd": {
+        "default": 0.225,
+        "range_low": 0.2,
+        "range_high": 0.25,
+        "unit": "USD/mile",
+        "param_id": "REF_MAINT_CPM_B20",
+        "source": "Argonne ANL AFLEET 2023",
+        "note": "Same as diesel baseline"
+      }
+    },
+    "fuel_economy": {
+      "bus_mpg": {
+        "default": 5.9,
+        "range_low": 4.9,
+        "range_high": 6.9,
+        "unit": "MPG",
+        "param_id": "REF_FE_B20_BUS_MPG",
+        "source": "Argonne ANL AFLEET 2023",
+        "note": "~2% fuel-economy penalty vs. diesel"
+      }
+    },
+    "emissions": {
+      "carbon_intensity_wtw": {
+        "default": 18.0,
+        "unit": "lb CO2e/gallon (WTW)",
+        "param_id": "REF_CI_B20_GHG",
+        "source": "Argonne ANL GREET 2023",
+        "note": "~20% reduction vs. diesel"
+      }
+    },
+    "fuel_price": {
+      "default_price_gal": {
+        "default": 3.85,
+        "unit": "USD/gal",
+        "param_id": "REF_PRICE_DIESEL_GAL",
+        "source": "U.S. EIA On-Highway Diesel Fuel Update",
+        "note": "Uses diesel baseline; no B20 price premium/discount currently modeled"
+      }
+    },
+    "climate_adjustment": {
+      "cold_weather_maintenance_multiplier": {
+        "default": 1.1,
+        "unit": "multiplier",
+        "param_id": "REF_BIODIESEL_COLD_MAINTENANCE_MULTIPLIER",
+        "source_agency": "Engineering estimate pending literature citation",
+        "source": "Engineering estimate pending literature citation",
+        "note": "10% maintenance premium for cold-weather gelling risk, fuel heater operation, and frequent fuel filter replacement when climate.cold_climate_flag == true"
+      }
+    }
+  },
+  "canadian_regional_pricing": {
+    "NB": {
+      "diesel": {
+        "default_price_per_gal_cad": 8.9109,
+        "default_price_per_liter_cad": 2.354,
+        "unit": "CAD/gallon (US)",
+        "param_id": "REF_PRICE_DIESEL_CAD_NB",
+        "source_agency": "Natural Resources Canada, Retail Fuel Prices by Province",
+        "source": "NRCan retail price survey (natural-resources.canada.ca), province-wide city average",
+        "as_of_date": "2026-08-18",
+        "conversion_note": "NRCan publishes CAD/L (native unit); converted to CAD/US-gallon via fixed constant 1 gal = 3.785411784 L to match the mpg-based fuel-economy baseline, which remains AFLEET/US-sourced. This is a fixed unit conversion, not a currency exchange rate -- it does not go stale."
+      },
+      "electricity": {
+        "default_price_per_kwh_cad": 0.1113,
+        "unit": "CAD/kWh",
+        "param_id": "REF_PRICE_ELEC_CAD_NB",
+        "source_agency": "Hydro-Quebec, Comparison of Electricity Prices in Major North American Cities (2025)",
+        "source": "Large-power tier (3,060,000 kWh/month, 5,000 kW demand), rates in effect April 1, 2025, excl. tax",
+        "note": "Large-power/industrial tier selected to match fleet-depot-scale simultaneous charging load; demand-charge and fleet-size-dependent pricing not modeled -- same simplification the existing US 'Commercial Sector' default already carries."
+      }
+    },
+    "ON": {
+      "diesel": {
+        "default_price_per_gal_cad": 8.396,
+        "default_price_per_liter_cad": 2.218,
+        "unit": "CAD/gallon (US)",
+        "param_id": "REF_PRICE_DIESEL_CAD_ON",
+        "source_agency": "Natural Resources Canada, Retail Fuel Prices by Province",
+        "source": "NRCan retail price survey (natural-resources.canada.ca), province-wide city average",
+        "as_of_date": "2026-08-18",
+        "conversion_note": "NRCan publishes CAD/L (native unit); converted to CAD/US-gallon via fixed constant 1 gal = 3.785411784 L to match the mpg-based fuel-economy baseline, which remains AFLEET/US-sourced. This is a fixed unit conversion, not a currency exchange rate -- it does not go stale."
+      },
+      "electricity": {
+        "default_price_per_kwh_cad": 0.128,
+        "unit": "CAD/kWh",
+        "param_id": "REF_PRICE_ELEC_CAD_ON",
+        "source_agency": "Hydro-Quebec, Comparison of Electricity Prices in Major North American Cities (2025)",
+        "source": "Large-power tier (3,060,000 kWh/month, 5,000 kW demand), rates in effect April 1, 2025, excl. tax",
+        "note": "Large-power/industrial tier selected to match fleet-depot-scale simultaneous charging load; demand-charge and fleet-size-dependent pricing not modeled -- same simplification the existing US 'Commercial Sector' default already carries."
+      }
+    },
+    "QC": {
+      "diesel": {
+        "default_price_per_gal_cad": 9.4522,
+        "default_price_per_liter_cad": 2.497,
+        "unit": "CAD/gallon (US)",
+        "param_id": "REF_PRICE_DIESEL_CAD_QC",
+        "source_agency": "Natural Resources Canada, Retail Fuel Prices by Province",
+        "source": "NRCan retail price survey (natural-resources.canada.ca), province-wide city average",
+        "as_of_date": "2026-08-18",
+        "conversion_note": "NRCan publishes CAD/L (native unit); converted to CAD/US-gallon via fixed constant 1 gal = 3.785411784 L to match the mpg-based fuel-economy baseline, which remains AFLEET/US-sourced. This is a fixed unit conversion, not a currency exchange rate -- it does not go stale."
+      },
+      "electricity": {
+        "default_price_per_kwh_cad": 0.0583,
+        "unit": "CAD/kWh",
+        "param_id": "REF_PRICE_ELEC_CAD_QC",
+        "source_agency": "Hydro-Quebec, Comparison of Electricity Prices in Major North American Cities (2025)",
+        "source": "Large-power tier (3,060,000 kWh/month, 5,000 kW demand), rates in effect April 1, 2025, excl. tax",
+        "note": "Large-power/industrial tier selected to match fleet-depot-scale simultaneous charging load; demand-charge and fleet-size-dependent pricing not modeled -- same simplification the existing US 'Commercial Sector' default already carries."
+      }
+    },
+    "BC": {
+      "diesel": {
+        "default_price_per_gal_cad": 9.1039,
+        "default_price_per_liter_cad": 2.405,
+        "unit": "CAD/gallon (US)",
+        "param_id": "REF_PRICE_DIESEL_CAD_BC",
+        "source_agency": "Natural Resources Canada, Retail Fuel Prices by Province",
+        "source": "NRCan retail price survey (natural-resources.canada.ca), province-wide city average",
+        "as_of_date": "2026-08-18",
+        "conversion_note": "NRCan publishes CAD/L (native unit); converted to CAD/US-gallon via fixed constant 1 gal = 3.785411784 L to match the mpg-based fuel-economy baseline, which remains AFLEET/US-sourced. This is a fixed unit conversion, not a currency exchange rate -- it does not go stale."
+      },
+      "electricity": {
+        "default_price_per_kwh_cad": 0.0842,
+        "unit": "CAD/kWh",
+        "param_id": "REF_PRICE_ELEC_CAD_BC",
+        "source_agency": "Hydro-Quebec, Comparison of Electricity Prices in Major North American Cities (2025)",
+        "source": "Large-power tier (3,060,000 kWh/month, 5,000 kW demand), rates in effect April 1, 2025, excl. tax",
+        "note": "Large-power/industrial tier selected to match fleet-depot-scale simultaneous charging load; demand-charge and fleet-size-dependent pricing not modeled -- same simplification the existing US 'Commercial Sector' default already carries."
+      }
+    },
+    "AB": {
+      "diesel": {
+        "default_price_per_gal_cad": 7.8661,
+        "default_price_per_liter_cad": 2.078,
+        "unit": "CAD/gallon (US)",
+        "param_id": "REF_PRICE_DIESEL_CAD_AB",
+        "source_agency": "Natural Resources Canada, Retail Fuel Prices by Province",
+        "source": "NRCan retail price survey (natural-resources.canada.ca), province-wide city average",
+        "as_of_date": "2026-08-18",
+        "conversion_note": "NRCan publishes CAD/L (native unit); converted to CAD/US-gallon via fixed constant 1 gal = 3.785411784 L to match the mpg-based fuel-economy baseline, which remains AFLEET/US-sourced. This is a fixed unit conversion, not a currency exchange rate -- it does not go stale."
+      },
+      "electricity": {
+        "default_price_per_kwh_cad": 0.0802,
+        "unit": "CAD/kWh",
+        "param_id": "REF_PRICE_ELEC_CAD_AB",
+        "source_agency": "Hydro-Quebec, Comparison of Electricity Prices in Major North American Cities (2025)",
+        "source": "Large-power tier (3,060,000 kWh/month, 5,000 kW demand), rates in effect April 1, 2025, excl. tax",
+        "note": "Large-power/industrial tier selected to match fleet-depot-scale simultaneous charging load; demand-charge and fleet-size-dependent pricing not modeled -- same simplification the existing US 'Commercial Sector' default already carries."
+      }
+    }
+  },
+  "canadian_regional_pricing_gaps": {
+    "cng_fuel_price": {
+      "status": "No Canadian-specific CNG fuel price benchmark found after search (Aug 2026). Resolved via FX conversion of the US AFLEET default per fx_rates.json -- see REF_PRICE_CNG_DGE in the assumptions matrix for the converted figure and rate used.",
+      "affected_param": "REF_PRICE_CNG_DGE"
+    },
+    "hydrogen_fuel_price": {
+      "status": "No Canadian-specific hydrogen fuel price benchmark found after search (Aug 2026). Resolved via FX conversion of the US NREL H2A defaults per fx_rates.json -- see REF_PRICE_H2_KG_SMALL / REF_PRICE_H2_KG_MED in the assumptions matrix.",
+      "affected_params": [
+        "REF_PRICE_H2_KG_SMALL",
+        "REF_PRICE_H2_KG_MED"
+      ]
+    },
+    "vehicle_capex_all_pathways": {
+      "status": "No published Canadian dealer list pricing exists for any pathway (commercial bus sales are quote-based, not publicly listed, in both countries). Real Canadian distributors identified for citation context (Girardin Blue Bird: QC/ON/Maritimes; Dynamic: BC/AB/YT) but no usable price figure. Resolved via FX conversion of the US AFLEET defaults."
+    },
+    "infrastructure_capex_bev_h2_cng": {
+      "status": "NRCan ZEVIP publishes subsidy amounts (up to 50% of cost, capped per connector), not underlying installation cost -- not usable as a baseline. Resolved via FX conversion of the US AFLEET/NREL defaults."
+    },
+    "maintenance_cost_per_mile_all_pathways": {
+      "status": "CUTA (Canadian Urban Transit Association) publishes member-only fleet statistics; no public per-mile/per-km maintenance benchmark found for any pathway. Resolved via FX conversion of the US AFLEET defaults."
+    },
+    "bev_incentive_outside_quebec": {
+      "status": "No automatic federal or provincial BEV purchase incentive found for any Canadian region other than Quebec after a real search pass (Aug 2026). iMHZEV explicitly excludes school buses and public transit. ZETF is a competitive, capped grant program (up to 50% of eligible costs), not an automatic credit, and industry reporting (Mar 2026) indicates it has been exhausted since 2025 with its successor fund's rules not yet published -- not modeled as a result. New Brunswick specifically was checked twice this session; no provincial program exists.",
+      "affected_param": "REF_INCENTIVE_QC_PETS_BEV_BUS (region-gated to QC only, not a general CA incentive)"
+    }
+  }
+}

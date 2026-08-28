@@ -1,0 +1,11 @@
+node_modules/
+fleetpath-frontend/node_modules/
+fleetpath-frontend/dist/
+.vscode/
+__pycache__/
+*/__pycache__/
+*.pyc
+.pytest_cache/
+*.log
+
+.venv/

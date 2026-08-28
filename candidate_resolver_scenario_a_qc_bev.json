@@ -1,0 +1,1146 @@
+{
+  "advanced": {
+    "payback_vector": [
+      {
+        "cumulative_cost_by_year": [
+          1929900.0,
+          2156163.5,
+          2382427.0,
+          2608690.5,
+          2834954.0,
+          3061217.5,
+          3287481.0,
+          3513744.5,
+          3740008.0,
+          3966271.5,
+          4192535.0,
+          4418798.5,
+          4645062.0
+        ],
+        "currency": "CAD",
+        "fuel_type": "diesel"
+      },
+      {
+        "cumulative_cost_by_year": [
+          3858193.36,
+          3901366.28,
+          3944539.2,
+          3987712.12,
+          4030885.04,
+          4074057.96,
+          4117230.88,
+          4160403.8,
+          4203576.72,
+          4246749.64,
+          4289922.56,
+          4333095.48,
+          4376268.4
+        ],
+        "currency": "CAD",
+        "fuel_type": "bev"
+      },
+      {
+        "cumulative_cost_by_year": [
+          14129625.0,
+          14375273.7,
+          14620922.4,
+          14866571.1,
+          15112219.8,
+          15357868.5,
+          15603517.2,
+          15849165.9,
+          16094814.6,
+          16340463.3,
+          16586112.0,
+          16831760.7,
+          17077409.4
+        ],
+        "currency": "CAD",
+        "fuel_type": "hydrogen"
+      },
+      {
+        "cumulative_cost_by_year": [
+          3032700.0,
+          3166690.2,
+          3300680.4,
+          3434670.6,
+          3568660.8,
+          3702651.0,
+          3836641.2,
+          3970631.4,
+          4104621.6,
+          4238611.8,
+          4372602.0,
+          4506592.2,
+          4640582.4
+        ],
+        "currency": "CAD",
+        "fuel_type": "cng"
+      },
+      {
+        "cumulative_cost_by_year": [
+          1929900.0,
+          2159367.64,
+          2388835.28,
+          2618302.92,
+          2847770.56,
+          3077238.2,
+          3306705.84,
+          3536173.48,
+          3765641.12,
+          3995108.76,
+          4224576.4,
+          4454044.04,
+          4683511.68
+        ],
+        "currency": "CAD",
+        "fuel_type": "biodiesel"
+      }
+    ],
+    "payback_vector_years_axis": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "tco_composition": [
+      {
+        "assumptions": [
+          {
+            "is_override": false,
+            "label": "Diesel Bus Purchase Price",
+            "param_id": "REF_CAPEX_VEH_DIESEL_BUS",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/vehicle",
+            "value": 140000.0
+          },
+          {
+            "is_override": false,
+            "label": "Diesel Bus Purchase Price (CAD, FX-converted)",
+            "param_id": "REF_CAPEX_VEH_DIESEL_BUS_CAD_FX",
+            "source_agency": "Diesel Bus Purchase Price source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+            "unit": "CAD/vehicle",
+            "value": 192990.0
+          },
+          {
+            "is_override": false,
+            "label": "Diesel Maintenance Cost per Mile",
+            "param_id": "REF_MAINT_CPM_DIESEL",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/mile",
+            "value": 0.225
+          },
+          {
+            "is_override": false,
+            "label": "Diesel Maintenance Cost per Mile (CAD, FX-converted)",
+            "param_id": "REF_MAINT_CPM_DIESEL_CAD_FX",
+            "source_agency": "Diesel Maintenance Cost per Mile source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+            "unit": "CAD/mile",
+            "value": 0.3102
+          },
+          {
+            "is_override": false,
+            "label": "Diesel Fuel Economy",
+            "param_id": "REF_FE_DIESEL_BUS_MPG",
+            "source_agency": "Argonne ANL AFLEET 2023 / GREET",
+            "unit": "MPG",
+            "value": 6.0
+          },
+          {
+            "is_override": false,
+            "label": "Diesel Well-to-Wheel Carbon Intensity",
+            "param_id": "REF_CI_DIESEL_GHG",
+            "source_agency": "Argonne ANL GREET 2023 (via AFLEET)",
+            "unit": "lb CO2e/gallon (WTW)",
+            "value": 22.4
+          }
+        ],
+        "capex_infra_amortized": 0.0,
+        "capex_vehicle_amortized": 160825.0,
+        "cold_climate_adjustment_applied": false,
+        "currency": "CAD",
+        "fuel_type": "diesel",
+        "incentives_applied": 0.0,
+        "lifecycle_co2e_tons": 203.21,
+        "opex_fuel": 189044.0,
+        "opex_maintenance": 37219.5,
+        "tco_total": 387088.5
+      },
+      {
+        "assumptions": [
+          {
+            "is_override": false,
+            "label": "BEV Charger Hardware Cost",
+            "param_id": "REF_INFRA_BEV_DCFC_50_HW",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/charger",
+            "value": 27900.0
+          },
+          {
+            "is_override": false,
+            "label": "BEV Charger Hardware Cost (CAD, FX-converted)",
+            "param_id": "REF_INFRA_BEV_DCFC_50_HW_CAD_FX",
+            "source_agency": "BEV Charger Hardware Cost source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+            "unit": "CAD/charger",
+            "value": 38460.15
+          },
+          {
+            "is_override": false,
+            "label": "BEV Charger Make-Ready (Site) Cost",
+            "param_id": "REF_INFRA_BEV_DCFC_50_MR",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/charger",
+            "value": 62700.0
+          },
+          {
+            "is_override": false,
+            "label": "BEV Charger Make-Ready (Site) Cost (CAD, FX-converted)",
+            "param_id": "REF_INFRA_BEV_DCFC_50_MR_CAD_FX",
+            "source_agency": "BEV Charger Make-Ready (Site) Cost source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+            "unit": "CAD/charger",
+            "value": 86431.95
+          },
+          {
+            "is_override": false,
+            "label": "BEV Charger Annual Communications Cost",
+            "param_id": "REF_INFRA_BEV_COMMS",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/charger/year",
+            "value": 255.0
+          },
+          {
+            "is_override": false,
+            "label": "BEV Charger Annual Communications Cost (CAD, FX-converted)",
+            "param_id": "REF_INFRA_BEV_COMMS_CAD_FX",
+            "source_agency": "BEV Charger Annual Communications Cost source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+            "unit": "CAD/charger/year",
+            "value": 351.5175
+          },
+          {
+            "is_override": false,
+            "label": "BEV Charger Annual Maintenance Rate",
+            "param_id": "REF_INFRA_BEV_MAINT_PCT",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "% of hardware cost/year",
+            "value": 0.005
+          },
+          {
+            "is_override": false,
+            "label": "BEV Charger Warranty Cost Rate",
+            "param_id": "REF_INFRA_BEV_WARRANT_PCT",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "% of hardware cost (one-time, lifetime)",
+            "value": 0.07
+          },
+          {
+            "is_override": false,
+            "label": "BEV Energy Consumption",
+            "param_id": "REF_FE_BEV_BUS_KWH",
+            "source_agency": "Argonne ANL AFLEET 2023 / GREET",
+            "unit": "kWh/mile",
+            "value": 2.0
+          },
+          {
+            "is_override": false,
+            "label": "Battery-Electric Bus Purchase Price",
+            "param_id": "REF_CAPEX_VEH_BEV_BUS",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/vehicle",
+            "value": 425000.0
+          },
+          {
+            "is_override": false,
+            "label": "Battery-Electric Bus Purchase Price (CAD, FX-converted)",
+            "param_id": "REF_CAPEX_VEH_BEV_BUS_CAD_FX",
+            "source_agency": "Battery-Electric Bus Purchase Price source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+            "unit": "CAD/vehicle",
+            "value": 585862.5
+          },
+          {
+            "is_override": false,
+            "label": "BEV Maintenance Cost per Mile",
+            "param_id": "REF_MAINT_CPM_BEV",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/mile",
+            "value": 0.16
+          },
+          {
+            "is_override": false,
+            "label": "BEV Maintenance Cost per Mile (CAD, FX-converted)",
+            "param_id": "REF_MAINT_CPM_BEV_CAD_FX",
+            "source_agency": "BEV Maintenance Cost per Mile source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+            "unit": "CAD/mile",
+            "value": 0.2206
+          },
+          {
+            "is_override": false,
+            "label": "Quebec PETS Electric School Bus Purchase Rebate",
+            "param_id": "REF_INCENTIVE_QC_PETS_BEV_BUS",
+            "source_agency": "Gouvernement du Quebec, Programme d'electrification du transport scolaire (PETS), Volet 1",
+            "unit": "CAD/vehicle",
+            "value": 125000.0
+          },
+          {
+            "is_override": false,
+            "label": "Grid Factor Eccc Qc",
+            "param_id": "GRID_FACTOR_ECCC_QC",
+            "source_agency": "ECCC National Inventory Report 2023 (NIR 1990-2021), Annex 7, Table A7-6 (Quebec generation intensity, 2021 data)",
+            "unit": "lb CO2e/MWh",
+            "value": 2.8
+          },
+          {
+            "is_override": false,
+            "label": "Infrastructure Amortization Lifespan",
+            "param_id": "INFRA_LIFESPAN_YEARS",
+            "source_agency": "FleetPath Engineering Constant",
+            "unit": "years",
+            "value": 20.0
+          },
+          {
+            "is_override": false,
+            "label": "BEV Charger-to-Bus Ratio",
+            "param_id": "REF_INFRA_BEV_RATIO",
+            "source_agency": "FleetPath Engineering Constant",
+            "unit": "buses per charger",
+            "value": 2.5
+          }
+        ],
+        "capex_infra_amortized": 24978.42,
+        "capex_vehicle_amortized": 384052.08,
+        "cold_climate_adjustment_applied": false,
+        "currency": "CAD",
+        "fuel_type": "bev",
+        "incentives_applied": 1250000.0,
+        "lifecycle_co2e_tons": 0.305,
+        "opex_fuel": 13992.0,
+        "opex_maintenance": 29180.92,
+        "tco_total": 452203.42
+      },
+      {
+        "assumptions": [
+          {
+            "is_override": false,
+            "label": "Hydrogen Fuel Consumption",
+            "param_id": "REF_FE_H2FC_BUS_KG",
+            "source_agency": "NREL ATB 2024 / Argonne GREET",
+            "unit": "kg H2/mile",
+            "value": 0.09
+          },
+          {
+            "is_override": false,
+            "label": "Hydrogen Small-Tier Station CapEx (Reference)",
+            "param_id": "REF_INFRA_H2_STATION_CAPEX",
+            "source_agency": "NREL H2A / DOE HFTO Multi-Year Plan",
+            "unit": "USD/station",
+            "value": 2500000.0
+          },
+          {
+            "is_override": false,
+            "label": "Hydrogen Small-Tier Station CapEx (Reference) (CAD, FX-converted)",
+            "param_id": "REF_INFRA_H2_STATION_CAPEX_CAD_FX",
+            "source_agency": "Hydrogen Small-Tier Station CapEx (Reference) source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+            "unit": "CAD/station",
+            "value": 3446250.0
+          },
+          {
+            "is_override": false,
+            "label": "Hydrogen Fuel Cell Bus Purchase Price",
+            "param_id": "REF_CAPEX_VEH_H2FC_BUS",
+            "source_agency": "Argonne ANL AFLEET 2023 / NREL ATB 2024",
+            "unit": "USD/vehicle",
+            "value": 975000.0
+          },
+          {
+            "is_override": false,
+            "label": "Hydrogen Fuel Cell Bus Purchase Price (CAD, FX-converted)",
+            "param_id": "REF_CAPEX_VEH_H2FC_BUS_CAD_FX",
+            "source_agency": "Hydrogen Fuel Cell Bus Purchase Price source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+            "unit": "CAD/vehicle",
+            "value": 1344037.5
+          },
+          {
+            "is_override": false,
+            "label": "Clean Hydrogen ITC Rate (Canada Federal)",
+            "param_id": "REF_INCENTIVE_CA_FEDERAL_H2_ITC",
+            "source_agency": "Finance Canada / ECCC",
+            "unit": "fraction of station capex",
+            "value": 0.4
+          },
+          {
+            "is_override": false,
+            "label": "Hydrogen Price \u2014 Small Station Tier",
+            "param_id": "REF_PRICE_H2_KG_SMALL",
+            "source_agency": "NREL H2A Delivered Liquid Station Model",
+            "unit": "USD/kg H2",
+            "value": 14.5
+          },
+          {
+            "is_override": false,
+            "label": "Hydrogen Price \u2014 Small Station Tier (CAD, FX-converted)",
+            "param_id": "REF_PRICE_H2_KG_SMALL_CAD_FX",
+            "source_agency": "Hydrogen Price \u2014 Small Station Tier source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+            "unit": "CAD/kg H2",
+            "value": 19.9883
+          },
+          {
+            "is_override": false,
+            "label": "Hydrogen Bus Maintenance Cost per Mile",
+            "param_id": "REF_MAINT_CPM_H2FC",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/mile",
+            "value": 0.18
+          },
+          {
+            "is_override": false,
+            "label": "Hydrogen Bus Maintenance Cost per Mile (CAD, FX-converted)",
+            "param_id": "REF_MAINT_CPM_H2FC_CAD_FX",
+            "source_agency": "Hydrogen Bus Maintenance Cost per Mile source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+            "unit": "CAD/mile",
+            "value": 0.2481
+          },
+          {
+            "is_override": false,
+            "label": "Grid Factor Eccc Qc",
+            "param_id": "GRID_FACTOR_ECCC_QC",
+            "source_agency": "ECCC National Inventory Report 2023 (NIR 1990-2021), Annex 7, Table A7-6 (Quebec generation intensity, 2021 data)",
+            "unit": "lb CO2e/MWh",
+            "value": 2.8
+          },
+          {
+            "is_override": false,
+            "label": "Infrastructure Amortization Lifespan",
+            "param_id": "INFRA_LIFESPAN_YEARS",
+            "source_agency": "FleetPath Engineering Constant",
+            "unit": "years",
+            "value": 20.0
+          },
+          {
+            "is_override": false,
+            "label": "Hydrogen Station Tier Threshold",
+            "param_id": "H2_TIER_THRESHOLD_KG_DAY",
+            "source_agency": "FleetPath Engineering Constant",
+            "unit": "kg H2/day",
+            "value": 300.0
+          },
+          {
+            "is_override": false,
+            "label": "Hydrogen Small-Tier Station CapEx",
+            "param_id": "H2_CAPEX_SMALL_LIQUID",
+            "source_agency": "FleetPath Engineering Constant",
+            "unit": "",
+            "value": 2500000.0
+          }
+        ],
+        "capex_infra_amortized": 103387.5,
+        "capex_vehicle_amortized": 1120031.25,
+        "cold_climate_adjustment_applied": false,
+        "currency": "CAD",
+        "fuel_type": "hydrogen",
+        "incentives_applied": 1378500.0,
+        "lifecycle_co2e_tons": 0.686,
+        "opex_fuel": 215873.1,
+        "opex_maintenance": 29775.6,
+        "tco_total": 1469067.45
+      },
+      {
+        "assumptions": [
+          {
+            "is_override": false,
+            "label": "CNG Fast-Fill Station CapEx",
+            "param_id": "REF_INFRA_CNG_STATION_FAST",
+            "source_agency": "Argonne ANL AFLEET 2023 / Clean Cities",
+            "unit": "USD/station",
+            "value": 600000.0
+          },
+          {
+            "is_override": false,
+            "label": "CNG Fast-Fill Station CapEx (CAD, FX-converted)",
+            "param_id": "REF_INFRA_CNG_STATION_FAST_CAD_FX",
+            "source_agency": "CNG Fast-Fill Station CapEx source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+            "unit": "CAD/station",
+            "value": 827100.0
+          },
+          {
+            "is_override": false,
+            "label": "CNG Fuel Economy",
+            "param_id": "REF_FE_CNG_BUS_DGE",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "DGE/mile (MPGde)",
+            "value": 5.5
+          },
+          {
+            "is_override": false,
+            "label": "CNG Bus Purchase Price",
+            "param_id": "REF_CAPEX_VEH_CNG_BUS",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/vehicle",
+            "value": 160000.0
+          },
+          {
+            "is_override": false,
+            "label": "CNG Bus Purchase Price (CAD, FX-converted)",
+            "param_id": "REF_CAPEX_VEH_CNG_BUS_CAD_FX",
+            "source_agency": "CNG Bus Purchase Price source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+            "unit": "CAD/vehicle",
+            "value": 220560.0
+          },
+          {
+            "is_override": false,
+            "label": "CNG Reference Price",
+            "param_id": "REF_PRICE_CNG_DGE",
+            "source_agency": "DOE Clean Cities Alternative Fuel Price Report",
+            "unit": "USD/DGE",
+            "value": 3.3
+          },
+          {
+            "is_override": false,
+            "label": "CNG Reference Price (CAD, FX-converted)",
+            "param_id": "REF_PRICE_CNG_DGE_CAD_FX",
+            "source_agency": "CNG Reference Price source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+            "unit": "CAD/DGE",
+            "value": 4.5491
+          },
+          {
+            "is_override": false,
+            "label": "CNG Maintenance Cost per Mile",
+            "param_id": "REF_MAINT_CPM_CNG",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/mile",
+            "value": 0.21
+          },
+          {
+            "is_override": false,
+            "label": "CNG Maintenance Cost per Mile (CAD, FX-converted)",
+            "param_id": "REF_MAINT_CPM_CNG_CAD_FX",
+            "source_agency": "CNG Maintenance Cost per Mile source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+            "unit": "CAD/mile",
+            "value": 0.2895
+          },
+          {
+            "is_override": false,
+            "label": "CNG Well-to-Wheel Carbon Intensity",
+            "param_id": "REF_CI_CNG_GHG",
+            "source_agency": "Argonne ANL GREET 2023",
+            "unit": "lb CO2e/DGE (WTW)",
+            "value": 13.7
+          },
+          {
+            "is_override": false,
+            "label": "Infrastructure Amortization Lifespan",
+            "param_id": "INFRA_LIFESPAN_YEARS",
+            "source_agency": "FleetPath Engineering Constant",
+            "unit": "years",
+            "value": 20.0
+          },
+          {
+            "is_override": false,
+            "label": "CNG Fast-Fill Fleet-Size Threshold",
+            "param_id": "CNG_FLEET_THRESHOLD_FAST_FILL",
+            "source_agency": "FleetPath Engineering Constant",
+            "unit": "vehicles",
+            "value": 5.0
+          }
+        ],
+        "capex_infra_amortized": 41355.0,
+        "capex_vehicle_amortized": 183800.0,
+        "cold_climate_adjustment_applied": false,
+        "currency": "CAD",
+        "fuel_type": "cng",
+        "incentives_applied": 0.0,
+        "lifecycle_co2e_tons": 135.583,
+        "opex_fuel": 99252.0,
+        "opex_maintenance": 34738.2,
+        "tco_total": 359145.2
+      },
+      {
+        "assumptions": [
+          {
+            "is_override": false,
+            "label": "Biodiesel (B20) Bus Purchase Price",
+            "param_id": "REF_CAPEX_VEH_B20_BUS",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/vehicle",
+            "value": 140000.0
+          },
+          {
+            "is_override": false,
+            "label": "Biodiesel (B20) Bus Purchase Price (CAD, FX-converted)",
+            "param_id": "REF_CAPEX_VEH_B20_BUS_CAD_FX",
+            "source_agency": "Biodiesel (B20) Bus Purchase Price source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+            "unit": "CAD/vehicle",
+            "value": 192990.0
+          },
+          {
+            "is_override": false,
+            "label": "Biodiesel (B20) Maintenance Cost per Mile",
+            "param_id": "REF_MAINT_CPM_B20",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "USD/mile",
+            "value": 0.225
+          },
+          {
+            "is_override": false,
+            "label": "Biodiesel (B20) Maintenance Cost per Mile (CAD, FX-converted)",
+            "param_id": "REF_MAINT_CPM_B20_CAD_FX",
+            "source_agency": "Biodiesel (B20) Maintenance Cost per Mile source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+            "unit": "CAD/mile",
+            "value": 0.3102
+          },
+          {
+            "is_override": false,
+            "label": "Biodiesel (B20) Fuel Economy",
+            "param_id": "REF_FE_B20_BUS_MPG",
+            "source_agency": "Argonne ANL AFLEET 2023",
+            "unit": "MPG",
+            "value": 5.9
+          },
+          {
+            "is_override": false,
+            "label": "Biodiesel (B20) Well-to-Wheel Carbon Intensity",
+            "param_id": "REF_CI_B20_GHG",
+            "source_agency": "Argonne ANL GREET 2023",
+            "unit": "lb CO2e/gallon (WTW)",
+            "value": 18.0
+          }
+        ],
+        "capex_infra_amortized": 0.0,
+        "capex_vehicle_amortized": 160825.0,
+        "cold_climate_adjustment_applied": false,
+        "currency": "CAD",
+        "fuel_type": "biodiesel",
+        "incentives_applied": 0.0,
+        "lifecycle_co2e_tons": 166.061,
+        "opex_fuel": 192248.14,
+        "opex_maintenance": 37219.5,
+        "tco_total": 390292.64
+      }
+    ]
+  },
+  "pathways": [
+    {
+      "assumptions": [
+        {
+          "is_override": false,
+          "label": "Diesel Bus Purchase Price",
+          "param_id": "REF_CAPEX_VEH_DIESEL_BUS",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/vehicle",
+          "value": 140000.0
+        },
+        {
+          "is_override": false,
+          "label": "Diesel Bus Purchase Price (CAD, FX-converted)",
+          "param_id": "REF_CAPEX_VEH_DIESEL_BUS_CAD_FX",
+          "source_agency": "Diesel Bus Purchase Price source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+          "unit": "CAD/vehicle",
+          "value": 192990.0
+        },
+        {
+          "is_override": false,
+          "label": "Diesel Maintenance Cost per Mile",
+          "param_id": "REF_MAINT_CPM_DIESEL",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/mile",
+          "value": 0.225
+        },
+        {
+          "is_override": false,
+          "label": "Diesel Maintenance Cost per Mile (CAD, FX-converted)",
+          "param_id": "REF_MAINT_CPM_DIESEL_CAD_FX",
+          "source_agency": "Diesel Maintenance Cost per Mile source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+          "unit": "CAD/mile",
+          "value": 0.3102
+        },
+        {
+          "is_override": false,
+          "label": "Diesel Fuel Economy",
+          "param_id": "REF_FE_DIESEL_BUS_MPG",
+          "source_agency": "Argonne ANL AFLEET 2023 / GREET",
+          "unit": "MPG",
+          "value": 6.0
+        },
+        {
+          "is_override": false,
+          "label": "Diesel Well-to-Wheel Carbon Intensity",
+          "param_id": "REF_CI_DIESEL_GHG",
+          "source_agency": "Argonne ANL GREET 2023 (via AFLEET)",
+          "unit": "lb CO2e/gallon (WTW)",
+          "value": 22.4
+        }
+      ],
+      "capex_infra_amortized": 0.0,
+      "capex_vehicle_amortized": 160825.0,
+      "cold_climate_adjustment_applied": false,
+      "currency": "CAD",
+      "fuel_type": "diesel",
+      "incentives_applied": 0.0,
+      "lifecycle_co2e_tons": 203.21,
+      "opex_fuel": 189044.0,
+      "opex_maintenance": 37219.5,
+      "tco_total": 387088.5
+    },
+    {
+      "assumptions": [
+        {
+          "is_override": false,
+          "label": "BEV Charger Hardware Cost",
+          "param_id": "REF_INFRA_BEV_DCFC_50_HW",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/charger",
+          "value": 27900.0
+        },
+        {
+          "is_override": false,
+          "label": "BEV Charger Hardware Cost (CAD, FX-converted)",
+          "param_id": "REF_INFRA_BEV_DCFC_50_HW_CAD_FX",
+          "source_agency": "BEV Charger Hardware Cost source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+          "unit": "CAD/charger",
+          "value": 38460.15
+        },
+        {
+          "is_override": false,
+          "label": "BEV Charger Make-Ready (Site) Cost",
+          "param_id": "REF_INFRA_BEV_DCFC_50_MR",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/charger",
+          "value": 62700.0
+        },
+        {
+          "is_override": false,
+          "label": "BEV Charger Make-Ready (Site) Cost (CAD, FX-converted)",
+          "param_id": "REF_INFRA_BEV_DCFC_50_MR_CAD_FX",
+          "source_agency": "BEV Charger Make-Ready (Site) Cost source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+          "unit": "CAD/charger",
+          "value": 86431.95
+        },
+        {
+          "is_override": false,
+          "label": "BEV Charger Annual Communications Cost",
+          "param_id": "REF_INFRA_BEV_COMMS",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/charger/year",
+          "value": 255.0
+        },
+        {
+          "is_override": false,
+          "label": "BEV Charger Annual Communications Cost (CAD, FX-converted)",
+          "param_id": "REF_INFRA_BEV_COMMS_CAD_FX",
+          "source_agency": "BEV Charger Annual Communications Cost source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+          "unit": "CAD/charger/year",
+          "value": 351.5175
+        },
+        {
+          "is_override": false,
+          "label": "BEV Charger Annual Maintenance Rate",
+          "param_id": "REF_INFRA_BEV_MAINT_PCT",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "% of hardware cost/year",
+          "value": 0.005
+        },
+        {
+          "is_override": false,
+          "label": "BEV Charger Warranty Cost Rate",
+          "param_id": "REF_INFRA_BEV_WARRANT_PCT",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "% of hardware cost (one-time, lifetime)",
+          "value": 0.07
+        },
+        {
+          "is_override": false,
+          "label": "BEV Energy Consumption",
+          "param_id": "REF_FE_BEV_BUS_KWH",
+          "source_agency": "Argonne ANL AFLEET 2023 / GREET",
+          "unit": "kWh/mile",
+          "value": 2.0
+        },
+        {
+          "is_override": false,
+          "label": "Battery-Electric Bus Purchase Price",
+          "param_id": "REF_CAPEX_VEH_BEV_BUS",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/vehicle",
+          "value": 425000.0
+        },
+        {
+          "is_override": false,
+          "label": "Battery-Electric Bus Purchase Price (CAD, FX-converted)",
+          "param_id": "REF_CAPEX_VEH_BEV_BUS_CAD_FX",
+          "source_agency": "Battery-Electric Bus Purchase Price source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+          "unit": "CAD/vehicle",
+          "value": 585862.5
+        },
+        {
+          "is_override": false,
+          "label": "BEV Maintenance Cost per Mile",
+          "param_id": "REF_MAINT_CPM_BEV",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/mile",
+          "value": 0.16
+        },
+        {
+          "is_override": false,
+          "label": "BEV Maintenance Cost per Mile (CAD, FX-converted)",
+          "param_id": "REF_MAINT_CPM_BEV_CAD_FX",
+          "source_agency": "BEV Maintenance Cost per Mile source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+          "unit": "CAD/mile",
+          "value": 0.2206
+        },
+        {
+          "is_override": false,
+          "label": "Quebec PETS Electric School Bus Purchase Rebate",
+          "param_id": "REF_INCENTIVE_QC_PETS_BEV_BUS",
+          "source_agency": "Gouvernement du Quebec, Programme d'electrification du transport scolaire (PETS), Volet 1",
+          "unit": "CAD/vehicle",
+          "value": 125000.0
+        },
+        {
+          "is_override": false,
+          "label": "Grid Factor Eccc Qc",
+          "param_id": "GRID_FACTOR_ECCC_QC",
+          "source_agency": "ECCC National Inventory Report 2023 (NIR 1990-2021), Annex 7, Table A7-6 (Quebec generation intensity, 2021 data)",
+          "unit": "lb CO2e/MWh",
+          "value": 2.8
+        },
+        {
+          "is_override": false,
+          "label": "Infrastructure Amortization Lifespan",
+          "param_id": "INFRA_LIFESPAN_YEARS",
+          "source_agency": "FleetPath Engineering Constant",
+          "unit": "years",
+          "value": 20.0
+        },
+        {
+          "is_override": false,
+          "label": "BEV Charger-to-Bus Ratio",
+          "param_id": "REF_INFRA_BEV_RATIO",
+          "source_agency": "FleetPath Engineering Constant",
+          "unit": "buses per charger",
+          "value": 2.5
+        }
+      ],
+      "capex_infra_amortized": 24978.42,
+      "capex_vehicle_amortized": 384052.08,
+      "cold_climate_adjustment_applied": false,
+      "currency": "CAD",
+      "fuel_type": "bev",
+      "incentives_applied": 1250000.0,
+      "lifecycle_co2e_tons": 0.305,
+      "opex_fuel": 13992.0,
+      "opex_maintenance": 29180.92,
+      "tco_total": 452203.42
+    },
+    {
+      "assumptions": [
+        {
+          "is_override": false,
+          "label": "Hydrogen Fuel Consumption",
+          "param_id": "REF_FE_H2FC_BUS_KG",
+          "source_agency": "NREL ATB 2024 / Argonne GREET",
+          "unit": "kg H2/mile",
+          "value": 0.09
+        },
+        {
+          "is_override": false,
+          "label": "Hydrogen Small-Tier Station CapEx (Reference)",
+          "param_id": "REF_INFRA_H2_STATION_CAPEX",
+          "source_agency": "NREL H2A / DOE HFTO Multi-Year Plan",
+          "unit": "USD/station",
+          "value": 2500000.0
+        },
+        {
+          "is_override": false,
+          "label": "Hydrogen Small-Tier Station CapEx (Reference) (CAD, FX-converted)",
+          "param_id": "REF_INFRA_H2_STATION_CAPEX_CAD_FX",
+          "source_agency": "Hydrogen Small-Tier Station CapEx (Reference) source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+          "unit": "CAD/station",
+          "value": 3446250.0
+        },
+        {
+          "is_override": false,
+          "label": "Hydrogen Fuel Cell Bus Purchase Price",
+          "param_id": "REF_CAPEX_VEH_H2FC_BUS",
+          "source_agency": "Argonne ANL AFLEET 2023 / NREL ATB 2024",
+          "unit": "USD/vehicle",
+          "value": 975000.0
+        },
+        {
+          "is_override": false,
+          "label": "Hydrogen Fuel Cell Bus Purchase Price (CAD, FX-converted)",
+          "param_id": "REF_CAPEX_VEH_H2FC_BUS_CAD_FX",
+          "source_agency": "Hydrogen Fuel Cell Bus Purchase Price source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+          "unit": "CAD/vehicle",
+          "value": 1344037.5
+        },
+        {
+          "is_override": false,
+          "label": "Clean Hydrogen ITC Rate (Canada Federal)",
+          "param_id": "REF_INCENTIVE_CA_FEDERAL_H2_ITC",
+          "source_agency": "Finance Canada / ECCC",
+          "unit": "fraction of station capex",
+          "value": 0.4
+        },
+        {
+          "is_override": false,
+          "label": "Hydrogen Price \u2014 Small Station Tier",
+          "param_id": "REF_PRICE_H2_KG_SMALL",
+          "source_agency": "NREL H2A Delivered Liquid Station Model",
+          "unit": "USD/kg H2",
+          "value": 14.5
+        },
+        {
+          "is_override": false,
+          "label": "Hydrogen Price \u2014 Small Station Tier (CAD, FX-converted)",
+          "param_id": "REF_PRICE_H2_KG_SMALL_CAD_FX",
+          "source_agency": "Hydrogen Price \u2014 Small Station Tier source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+          "unit": "CAD/kg H2",
+          "value": 19.9883
+        },
+        {
+          "is_override": false,
+          "label": "Hydrogen Bus Maintenance Cost per Mile",
+          "param_id": "REF_MAINT_CPM_H2FC",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/mile",
+          "value": 0.18
+        },
+        {
+          "is_override": false,
+          "label": "Hydrogen Bus Maintenance Cost per Mile (CAD, FX-converted)",
+          "param_id": "REF_MAINT_CPM_H2FC_CAD_FX",
+          "source_agency": "Hydrogen Bus Maintenance Cost per Mile source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+          "unit": "CAD/mile",
+          "value": 0.2481
+        },
+        {
+          "is_override": false,
+          "label": "Grid Factor Eccc Qc",
+          "param_id": "GRID_FACTOR_ECCC_QC",
+          "source_agency": "ECCC National Inventory Report 2023 (NIR 1990-2021), Annex 7, Table A7-6 (Quebec generation intensity, 2021 data)",
+          "unit": "lb CO2e/MWh",
+          "value": 2.8
+        },
+        {
+          "is_override": false,
+          "label": "Infrastructure Amortization Lifespan",
+          "param_id": "INFRA_LIFESPAN_YEARS",
+          "source_agency": "FleetPath Engineering Constant",
+          "unit": "years",
+          "value": 20.0
+        },
+        {
+          "is_override": false,
+          "label": "Hydrogen Station Tier Threshold",
+          "param_id": "H2_TIER_THRESHOLD_KG_DAY",
+          "source_agency": "FleetPath Engineering Constant",
+          "unit": "kg H2/day",
+          "value": 300.0
+        },
+        {
+          "is_override": false,
+          "label": "Hydrogen Small-Tier Station CapEx",
+          "param_id": "H2_CAPEX_SMALL_LIQUID",
+          "source_agency": "FleetPath Engineering Constant",
+          "unit": "",
+          "value": 2500000.0
+        }
+      ],
+      "capex_infra_amortized": 103387.5,
+      "capex_vehicle_amortized": 1120031.25,
+      "cold_climate_adjustment_applied": false,
+      "currency": "CAD",
+      "fuel_type": "hydrogen",
+      "incentives_applied": 1378500.0,
+      "lifecycle_co2e_tons": 0.686,
+      "opex_fuel": 215873.1,
+      "opex_maintenance": 29775.6,
+      "tco_total": 1469067.45
+    },
+    {
+      "assumptions": [
+        {
+          "is_override": false,
+          "label": "CNG Fast-Fill Station CapEx",
+          "param_id": "REF_INFRA_CNG_STATION_FAST",
+          "source_agency": "Argonne ANL AFLEET 2023 / Clean Cities",
+          "unit": "USD/station",
+          "value": 600000.0
+        },
+        {
+          "is_override": false,
+          "label": "CNG Fast-Fill Station CapEx (CAD, FX-converted)",
+          "param_id": "REF_INFRA_CNG_STATION_FAST_CAD_FX",
+          "source_agency": "CNG Fast-Fill Station CapEx source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+          "unit": "CAD/station",
+          "value": 827100.0
+        },
+        {
+          "is_override": false,
+          "label": "CNG Fuel Economy",
+          "param_id": "REF_FE_CNG_BUS_DGE",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "DGE/mile (MPGde)",
+          "value": 5.5
+        },
+        {
+          "is_override": false,
+          "label": "CNG Bus Purchase Price",
+          "param_id": "REF_CAPEX_VEH_CNG_BUS",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/vehicle",
+          "value": 160000.0
+        },
+        {
+          "is_override": false,
+          "label": "CNG Bus Purchase Price (CAD, FX-converted)",
+          "param_id": "REF_CAPEX_VEH_CNG_BUS_CAD_FX",
+          "source_agency": "CNG Bus Purchase Price source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+          "unit": "CAD/vehicle",
+          "value": 220560.0
+        },
+        {
+          "is_override": false,
+          "label": "CNG Reference Price",
+          "param_id": "REF_PRICE_CNG_DGE",
+          "source_agency": "DOE Clean Cities Alternative Fuel Price Report",
+          "unit": "USD/DGE",
+          "value": 3.3
+        },
+        {
+          "is_override": false,
+          "label": "CNG Reference Price (CAD, FX-converted)",
+          "param_id": "REF_PRICE_CNG_DGE_CAD_FX",
+          "source_agency": "CNG Reference Price source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+          "unit": "CAD/DGE",
+          "value": 4.5491
+        },
+        {
+          "is_override": false,
+          "label": "CNG Maintenance Cost per Mile",
+          "param_id": "REF_MAINT_CPM_CNG",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/mile",
+          "value": 0.21
+        },
+        {
+          "is_override": false,
+          "label": "CNG Maintenance Cost per Mile (CAD, FX-converted)",
+          "param_id": "REF_MAINT_CPM_CNG_CAD_FX",
+          "source_agency": "CNG Maintenance Cost per Mile source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+          "unit": "CAD/mile",
+          "value": 0.2895
+        },
+        {
+          "is_override": false,
+          "label": "CNG Well-to-Wheel Carbon Intensity",
+          "param_id": "REF_CI_CNG_GHG",
+          "source_agency": "Argonne ANL GREET 2023",
+          "unit": "lb CO2e/DGE (WTW)",
+          "value": 13.7
+        },
+        {
+          "is_override": false,
+          "label": "Infrastructure Amortization Lifespan",
+          "param_id": "INFRA_LIFESPAN_YEARS",
+          "source_agency": "FleetPath Engineering Constant",
+          "unit": "years",
+          "value": 20.0
+        },
+        {
+          "is_override": false,
+          "label": "CNG Fast-Fill Fleet-Size Threshold",
+          "param_id": "CNG_FLEET_THRESHOLD_FAST_FILL",
+          "source_agency": "FleetPath Engineering Constant",
+          "unit": "vehicles",
+          "value": 5.0
+        }
+      ],
+      "capex_infra_amortized": 41355.0,
+      "capex_vehicle_amortized": 183800.0,
+      "cold_climate_adjustment_applied": false,
+      "currency": "CAD",
+      "fuel_type": "cng",
+      "incentives_applied": 0.0,
+      "lifecycle_co2e_tons": 135.583,
+      "opex_fuel": 99252.0,
+      "opex_maintenance": 34738.2,
+      "tco_total": 359145.2
+    },
+    {
+      "assumptions": [
+        {
+          "is_override": false,
+          "label": "Biodiesel (B20) Bus Purchase Price",
+          "param_id": "REF_CAPEX_VEH_B20_BUS",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/vehicle",
+          "value": 140000.0
+        },
+        {
+          "is_override": false,
+          "label": "Biodiesel (B20) Bus Purchase Price (CAD, FX-converted)",
+          "param_id": "REF_CAPEX_VEH_B20_BUS_CAD_FX",
+          "source_agency": "Biodiesel (B20) Bus Purchase Price source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+          "unit": "CAD/vehicle",
+          "value": 192990.0
+        },
+        {
+          "is_override": false,
+          "label": "Biodiesel (B20) Maintenance Cost per Mile",
+          "param_id": "REF_MAINT_CPM_B20",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "USD/mile",
+          "value": 0.225
+        },
+        {
+          "is_override": false,
+          "label": "Biodiesel (B20) Maintenance Cost per Mile (CAD, FX-converted)",
+          "param_id": "REF_MAINT_CPM_B20_CAD_FX",
+          "source_agency": "Biodiesel (B20) Maintenance Cost per Mile source (USD) x Bank of Canada daily rate 2026-08-20 (1 USD = 1.3785 CAD)",
+          "unit": "CAD/mile",
+          "value": 0.3102
+        },
+        {
+          "is_override": false,
+          "label": "Biodiesel (B20) Fuel Economy",
+          "param_id": "REF_FE_B20_BUS_MPG",
+          "source_agency": "Argonne ANL AFLEET 2023",
+          "unit": "MPG",
+          "value": 5.9
+        },
+        {
+          "is_override": false,
+          "label": "Biodiesel (B20) Well-to-Wheel Carbon Intensity",
+          "param_id": "REF_CI_B20_GHG",
+          "source_agency": "Argonne ANL GREET 2023",
+          "unit": "lb CO2e/gallon (WTW)",
+          "value": 18.0
+        }
+      ],
+      "capex_infra_amortized": 0.0,
+      "capex_vehicle_amortized": 160825.0,
+      "cold_climate_adjustment_applied": false,
+      "currency": "CAD",
+      "fuel_type": "biodiesel",
+      "incentives_applied": 0.0,
+      "lifecycle_co2e_tons": 166.061,
+      "opex_fuel": 192248.14,
+      "opex_maintenance": 37219.5,
+      "tco_total": 390292.64
+    }
+  ],
+  "verdict": {
+    "emissions_reduction_pct": 99.8,
+    "payback_years": null,
+    "summary_text": "Battery-Electric wins: no capital payback within fleet lifecycle versus the diesel baseline, cutting lifecycle CO2e emissions by 99.8% relative to diesel. Note: Battery-Electric's lifetime cost is $65,115 CAD higher than diesel's over the fleet lifecycle -- this pathway is favored on blended cost/carbon utility, not on lowest raw cost.",
+    "winner_pathway": "bev"
+  }
+}

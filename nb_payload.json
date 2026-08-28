@@ -1,0 +1,11 @@
+﻿{
+  "region": { "state_prov": "NB" },
+  "fleet": {
+    "vehicle_type": "school_bus_typeC",
+    "vehicle_count": 233,
+    "annual_mileage_per_vehicle": 12000,
+    "lifecycle_years": 12
+  },
+  "overrides": {},
+  "climate": { "cold_climate_flag": null }
+}
